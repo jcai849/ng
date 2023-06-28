@@ -1,0 +1,22 @@
+# ng - Note Graph
+
+## Scope
+
+- [ ] Generating graph of connections between notes
+- [ ] Listing notes connected with selected note
+  - [ ] Listing notes linked to by selected note
+  - [ ] Listing notes backlinking to selected note
+  - [ ] External connections (weblinks, etc.)
+- [ ] Listing orphan notes
+- [ ] Listing placeholder notes
+- [ ] Listing tags
+- [ ] Listing files holding tag
+- [ ] Note rename transforming note backlinks
+
+Better terminology is well-defined in a graph-theoretic context and should be used instead
+
+## Means
+
+1. Parse markdown (using something like [md4c](https://github.com/mity/md4c))
+2. Map connections as a graph (something like [cgraph][https://graphviz.org/docs/library/])
+3. Output relevant lists
