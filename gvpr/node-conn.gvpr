@@ -1,0 +1,4 @@
+BEGIN { graph_t g = graph(sprintf("%s %s", ARGV[0], "Connections"), "SD"); }
+E[head.label == ARGV[0]] { clone(g, tail); }
+E[tail.label == ARGV[0]] { clone(g, head); }
+END { write(g); }

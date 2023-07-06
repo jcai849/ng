@@ -1,0 +1,3 @@
+BEGIN { graph_t g = graph(sprintf("%s %s", ARGV[0], "Direct Successors"), "SD"); }
+E[tail.label == ARGV[0]] { clone(g, head); }
+END { write(g); }

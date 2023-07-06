@@ -1,0 +1,1 @@
+void ybar(char *x);

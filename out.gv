@@ -1,0 +1,29 @@
+// href image comment type
+//  1   0             link
+//  1   1             image
+//  0   0             placeholder
+//  0   0     tag     tag
+//  0   0     task    task
+strict digraph {
+    fro[label="fro",href="fro.md"];
+    to[label="to",href="to.md"];
+    tofro[label="tofro",href="tofro.md"];
+    external[label="external",href="https://google.com"];
+    image[label="image",image="x.png",href="x.png"];
+    orphan[label="orphan",href="orphan.md"];
+    placeholder[label="placeholder",href=""];
+    tag[label="#tag", comment="tag"];
+
+    fro -> to;
+    fro -> tofro;
+    fro -> external;
+    fro -> image;
+    fro -> placeholder;
+    tofro -> to;
+    tofro -> external;
+    tofro -> placeholder;
+    tofro -> image;
+    fro -> tag;
+    tofro -> tag;
+
+}

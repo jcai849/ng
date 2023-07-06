@@ -1,0 +1,13 @@
+digraph new {
+	fro	[href="fro.md",
+		label=fro];
+	to	[href="to.md",
+		label=to];
+	external	[href="https://google.com",
+		label=external];
+	image	[href="x.png",
+		image="x.png",
+		label=image];
+	placeholder	[label=placeholder];
+	tag	[label="#tag"];
+}

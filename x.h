@@ -1,0 +1,1 @@
+void xbar(char *x);
