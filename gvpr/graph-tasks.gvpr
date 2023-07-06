@@ -1,0 +1,14 @@
+BEGIN {
+    graph_t g = graph(sprintf("%s %s", ARGV[0], "Tasks"), "SD");
+    int open;
+}
+N[comment=="task"] {
+    open = label == "Open Task";
+    if (ARGV[0] == "closed" && !open) {
+        clone(g, $);
+    }
+    else if (ARGV[0] == "open" && open) {
+        clone(g, $);
+    }
+}
+END { write(g); }

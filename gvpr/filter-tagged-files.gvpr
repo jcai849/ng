@@ -1,0 +1,4 @@
+BEGIN { node_t n; }
+E[1]
+E[head.comment=="tag" && head.label==ARGV[0]] { delete($T, tail); n = tail; }
+END_G { delete($T,n); }

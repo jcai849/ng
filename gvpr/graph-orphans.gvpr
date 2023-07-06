@@ -1,1 +1,17 @@
-N[degree == 0] 
+BEGIN {
+    graph_t components;
+    graph_t orphans = graph("Orphans", "S");
+    node_t n;
+    int n_files
+}
+N[indegree == 0] {
+    components = compOf($G, $);
+    n_files = 0;
+    for (n = fstnode(components); n != NULL; n = nxtnode_sg(components, n)) {
+        if (n.href != "" && n.image == "" && n != $) {
+            n_files++;
+        }
+    }
+    if (n_files == 0) clone(orphans, $)
+}
+END { write(orphans); }
