@@ -10,6 +10,9 @@
     void yyerror (char const *s) {
         fprintf (stderr, "%s\n", s);
     }
+
+    char TEXTBUF[1000];
+    int TEXTBUF_i;
 %}
 %%
 
@@ -25,12 +28,13 @@ verbatim:
 ;
 
 text:
-      %empty {char *empty = (char *) malloc(strlen("")+1);
-              $$ = empty = "";}
-    | text CHAR {char *str = (char*) malloc(strlen($1) + strlen($2) + 1);
-                 strcpy(str, $1);
-                 strcat(str, $2);
-                 $$ = str;}
+      %empty {TEXTBUF_i = 0;
+              TEXTBUF[TEXTBUF_i] = '\0';
+              $$ = TEXTBUF;}
+    | text CHAR {
+        TEXTBUF[TEXTBUF_i] = $2;
+        TEXTBUF_i += 1;
+        TEXTBUF[TEXTBUF_i] = '\0'; }
 ;
 
 link:

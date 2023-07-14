@@ -18,7 +18,7 @@
 
 ^([ ]{4,})|\t+                {BEGIN(CODE_BLOCK); return CODE_BLOCK_OPEN;}
 <CODE_BLOCK>\n[ \t]*\n        {BEGIN(INITIAL); return CODE_BLOCK_CLOSE;}
-<CODE_SPAN,CODE_BLOCK>\n|.    {yylval=strdup(yytext); return CHAR;}
+<CODE_SPAN,CODE_BLOCK>\n|.    {yylval=yytext; return CHAR;}
 
 \[\[                          {return WIKI_OPEN;}
 ]]                            {return WIKI_CLOSE;}
