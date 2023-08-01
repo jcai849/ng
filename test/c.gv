@@ -1,0 +1,17 @@
+strict digraph {
+    "c.md"[label="Test title C", href="c.md"]
+    "a.md"
+    "b.md"
+    "e.md"
+    "google.com"[label="google", href="google.com"]
+    "https://duckduckgo.com"[label="ddg", href="https://duckduckgo.com"]
+    "image.png"[label="image",href="image.png", tooltip="image"]
+    "image2.png"[label="image", href="image2.png", tooltip="nonexistent image"]
+    "<hash of task text1>"[label="closed task", tooltip="Completed task"]
+    "<hash of task text2>"[label="open task", tooltip="Partially completed task"]
+    "<hash of task text3>"[label="closed task", tooltip="Completed on 2020-01-01 23:24"]
+    "<hash of task text4>"[label="open task", tooltip="Incomplete task"]
+    "<hash of task text4>"[label="open task", tooltip="Task due 2024-01-01"]
+
+    "c.md" -> { "a.md" "b.md" "e.md" "google.com" "https://duckduckgo.com" "image.png" "image2.png" "<hash of task text1>" "<hash of task text2>" "<hash of task text3>" "<hash of task text4>" "<hash of task text4>" }
+}

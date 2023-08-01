@@ -1,0 +1,12 @@
+strict digraph {
+    "b.md"[label="Test title B", href="b.md"]
+    "a.md"
+    "google.com"[label="google", href="google.com"]
+    "https://duckduckgo.com"[label="ddg", href="https://duckduckgo.com"]
+    "image.png"[label="image",href="image.png", tooltip="image"]
+    "image2.png"[label="image", href="image2.png", tooltip="nonexistent image"]
+    "#tag3"[label="#tag3"]
+    "#tag4"[label="#tag4"]
+
+    "b.md" -> { "a.md" "google.com" "https://duckduckgo.com" "image.png" "image2.png" "#tag3" "#tag4" }
+}

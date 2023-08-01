@@ -1,0 +1,4 @@
+strict digraph G {
+    rankdir="LR";
+    parse -> concatenate -> postprocess; 
+}
